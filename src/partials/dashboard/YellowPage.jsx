@@ -99,7 +99,7 @@ function YellowPage() {
             className="inline-flex items-center gap-2 rounded border border-indigo-600 bg-indigo-600 px-6 py-2 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500"
             onClick={handleDownload}
           >
-            <span className="text-sm font-medium"> Download </span>
+            <span className="text-sm font-medium"> Proceed </span>
 
             <svg
               className="size-5 rtl:rotate-180"

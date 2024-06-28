@@ -1,9 +1,12 @@
 import React, { useEffect } from "react";
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Link } from "react-router-dom";
 
 import "./css/style.css";
 
 import "./charts/ChartjsConfig";
+
+import FindEmail from "./pages/FindEmail";
+import LinkedIn from "./pages/LinkedIn";
 
 // Import pages
 import Dashboard from "./pages/Dashboard";
@@ -21,8 +24,8 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
-        {/* <Route exact path="/email" element={<Email />} />
-        <Route exact path="/lindedin" element={<LinkedIn />} /> */}
+        <Route exact path="/email" element={<FindEmail />} />
+        <Route exact path="/linkedin" element={<LinkedIn />} />
       </Routes>
     </>
   );
