@@ -5,7 +5,7 @@ import "./css/style.css";
 
 import "./charts/ChartjsConfig";
 
-import FindEmail from "./pages/FindEmail";
+import FindEmails from "./pages/FindEmails";
 import LinkedIn from "./pages/LinkedIn";
 
 // Import pages
@@ -24,7 +24,7 @@ function App() {
     <>
       <Routes>
         <Route exact path="/" element={<Dashboard />} />
-        <Route exact path="/email" element={<FindEmail />} />
+        <Route exact path="/email" element={<FindEmails />} />
         <Route exact path="/linkedin" element={<LinkedIn />} />
       </Routes>
     </>

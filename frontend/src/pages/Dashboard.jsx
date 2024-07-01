@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Sidebar from "../partials/Sidebar";
 import Header from "../partials/Header";
 import YellowPage from "../partials/dashboard/YellowPage";
-
+import Monnit from "../partials/dashboard/Monnit";
 function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
@@ -28,6 +28,7 @@ function Dashboard() {
             {/* Cards */}
             <div className="grid grid-cols-12 gap-6">
               <YellowPage />
+              <Monnit></Monnit>
             </div>
           </div>
         </main>
