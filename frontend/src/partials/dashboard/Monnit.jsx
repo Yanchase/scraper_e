@@ -5,7 +5,7 @@ function Monnit() {
 
   const handleDownload = () => {
     setLoading(true);
-    const url = `monnit`;
+    const url = `/scrape/monnit`;
 
     fetch(url)
       .then((response) => {

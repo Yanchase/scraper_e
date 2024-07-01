@@ -2,7 +2,8 @@ import React, { useState } from "react";
 
 import Sidebar from "../partials/Sidebar";
 import Header from "../partials/Header";
-import YellowPage from "../partials/dashboard/YellowPage";
+
+import FindEmails from "../partials/dashboard/FindEmails";
 
 function Dashboard() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -26,7 +27,9 @@ function Dashboard() {
             </div>
 
             {/* Cards */}
-            <div className="grid grid-cols-12 gap-6"></div>
+            <div className="grid grid-cols-12 gap-6">
+              <FindEmails></FindEmails>
+            </div>
           </div>
         </main>
       </div>

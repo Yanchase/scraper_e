@@ -1,0 +1,141 @@
+2024-07-01 15:28:41,816 - WARNING -  * Debugger is active!
+2024-07-01 15:28:41,821 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 15:28:56,975 - INFO -  * Detected change in '/Users/winwin/Documents/GitHub/scraper_e/backend/scraper/app/emails/routes.py', reloading
+2024-07-01 15:28:57,420 - WARNING -  * Debugger is active!
+2024-07-01 15:28:57,424 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 15:29:05,743 - DEBUG - Using selector: KqueueSelector
+2024-07-01 15:29:06,890 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 15:29:08,293 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 15:29:08,591 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 15:29:09,670 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 15:29:10,769 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 15:29:11,188 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 15:29:11,190 - INFO - 127.0.0.1 - - [01/Jul/2024 15:29:11] "POST /emails/ HTTP/1.1" 200 -
+2024-07-01 15:31:49,412 - INFO -  * Detected change in '/Users/winwin/Documents/GitHub/scraper_e/backend/scraper/app/emails/routes.py', reloading
+2024-07-01 15:31:50,079 - WARNING -  * Debugger is active!
+2024-07-01 15:31:50,084 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 15:31:52,660 - DEBUG - Using selector: KqueueSelector
+2024-07-01 15:31:53,767 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 15:31:54,384 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 15:31:54,729 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 15:31:55,772 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 15:31:56,831 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 15:31:57,240 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 15:31:57,242 - INFO - 127.0.0.1 - - [01/Jul/2024 15:31:57] "POST /emails/ HTTP/1.1" 200 -
+2024-07-01 15:32:24,414 - INFO -  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2024-07-01 15:32:24,414 - INFO -  * Restarting with stat
+2024-07-01 15:32:24,689 - WARNING -  * Debugger is active!
+2024-07-01 15:32:24,695 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 15:32:27,313 - DEBUG - Using selector: KqueueSelector
+2024-07-01 15:32:28,455 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 15:32:29,106 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 15:32:29,388 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 15:32:30,510 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 15:32:31,575 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 15:32:32,000 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 15:32:32,002 - INFO - 127.0.0.1 - - [01/Jul/2024 15:32:32] "POST /emails/ HTTP/1.1" 200 -
+2024-07-01 15:37:00,944 - INFO -  * Detected change in '/Users/winwin/Documents/GitHub/scraper_e/backend/scraper/app/emails/routes.py', reloading
+2024-07-01 15:37:01,353 - INFO -  * Restarting with stat
+2024-07-01 15:37:01,960 - WARNING -  * Debugger is active!
+2024-07-01 15:37:01,965 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 15:37:04,991 - INFO -  * Detected change in '/Users/winwin/Documents/GitHub/scraper_e/backend/scraper/app/emails/routes.py', reloading
+2024-07-01 15:37:05,029 - INFO -  * Restarting with stat
+2024-07-01 15:37:05,348 - WARNING -  * Debugger is active!
+2024-07-01 15:37:05,352 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 15:37:10,273 - DEBUG - Using selector: KqueueSelector
+2024-07-01 15:37:11,419 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 15:37:12,743 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 15:37:12,993 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 15:37:14,156 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 15:37:15,249 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 15:37:15,688 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 15:37:15,690 - INFO - 127.0.0.1 - - [01/Jul/2024 15:37:15] "POST /emails/ HTTP/1.1" 200 -
+2024-07-01 15:37:48,747 - INFO -  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+2024-07-01 15:37:48,748 - INFO -  * Restarting with stat
+2024-07-01 15:37:49,079 - WARNING -  * Debugger is active!
+2024-07-01 15:37:49,083 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 15:37:54,610 - DEBUG - Using selector: KqueueSelector
+2024-07-01 15:37:55,629 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 15:37:56,145 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 15:37:56,437 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 15:37:57,555 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 15:37:59,431 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 15:38:00,343 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 15:38:00,354 - INFO - 127.0.0.1 - - [01/Jul/2024 15:38:00] "POST /emails/ HTTP/1.1" 200 -
+2024-07-01 15:40:43,573 - DEBUG - Starting new HTTPS connection (1): www.monnit.com:443
+2024-07-01 15:40:44,435 - DEBUG - https://www.monnit.com:443 "GET /partner/current-partners/ HTTP/1.1" 200 None
+2024-07-01 15:40:47,826 - INFO - 127.0.0.1 - - [01/Jul/2024 15:40:47] "GET /scrape/monnit HTTP/1.1" 200 -
+2024-07-01 15:44:19,315 - INFO -  * Detected change in '/Users/winwin/Documents/GitHub/scraper_e/backend/scraper/app/scrape/routes.py', reloading
+2024-07-01 15:44:19,582 - INFO -  * Restarting with stat
+2024-07-01 15:44:20,144 - WARNING -  * Debugger is active!
+2024-07-01 15:44:20,152 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 16:12:11,601 - DEBUG - Using selector: KqueueSelector
+2024-07-01 16:12:12,923 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 16:12:13,568 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 16:12:13,859 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 16:12:15,258 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 16:12:16,353 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 16:12:16,792 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 16:12:16,798 - INFO - 127.0.0.1 - - [01/Jul/2024 16:12:16] "POST /emails/ HTTP/1.1" 200 -
+2024-07-01 16:12:39,423 - DEBUG - Starting new HTTPS connection (1): www.monnit.com:443
+2024-07-01 16:12:40,273 - DEBUG - https://www.monnit.com:443 "GET /partner/current-partners/ HTTP/1.1" 200 None
+2024-07-01 16:12:43,835 - INFO - 127.0.0.1 - - [01/Jul/2024 16:12:43] "GET /scrape/monnit HTTP/1.1" 200 -
+2024-07-01 16:15:47,754 - INFO -  * Detected change in '/Users/winwin/Documents/GitHub/scraper_e/backend/scraper/app/emails/routes.py', reloading
+2024-07-01 16:15:48,103 - INFO -  * Restarting with stat
+2024-07-01 16:15:48,700 - WARNING -  * Debugger is active!
+2024-07-01 16:15:48,711 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 16:15:51,777 - DEBUG - Using selector: KqueueSelector
+2024-07-01 16:15:53,420 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 16:15:54,851 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 16:15:55,109 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 16:15:56,205 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 16:15:57,286 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 16:15:57,706 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 16:15:57,710 - INFO - 127.0.0.1 - - [01/Jul/2024 16:15:57] "POST /emails/ HTTP/1.1" 200 -
+2024-07-01 16:16:01,878 - INFO -  * Detected change in '/Users/winwin/Documents/GitHub/scraper_e/backend/scraper/app/emails/routes.py', reloading
+2024-07-01 16:16:01,972 - INFO -  * Restarting with stat
+2024-07-01 16:16:02,686 - WARNING -  * Debugger is active!
+2024-07-01 16:16:02,691 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 16:16:05,356 - INFO - 127.0.0.1 - - [01/Jul/2024 16:16:05] "[33mPOST /emails/ HTTP/1.1[0m" 404 -
+2024-07-01 16:16:05,357 - ERROR - 127.0.0.1 - - [01/Jul/2024 16:16:05] code 400, message Bad request syntax ('--------------------------9556e86df53782e9')
+2024-07-01 16:16:05,357 - INFO - 127.0.0.1 - - [01/Jul/2024 16:16:05] "[35m[1mNone /emails/ HTTP/0.9[0m" HTTPStatus.BAD_REQUEST -
+2024-07-01 16:16:10,106 - DEBUG - Using selector: KqueueSelector
+2024-07-01 16:16:11,105 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 16:16:12,385 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 16:16:12,650 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 16:16:13,699 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 16:16:14,779 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 16:16:15,207 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 16:16:15,209 - INFO - 127.0.0.1 - - [01/Jul/2024 16:16:15] "POST /emails/find HTTP/1.1" 200 -
+2024-07-01 16:30:40,355 - DEBUG - Using selector: KqueueSelector
+2024-07-01 16:30:41,383 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 16:30:42,695 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 16:30:42,971 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 16:30:44,093 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 16:30:45,156 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 16:30:45,572 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 16:30:45,578 - INFO - 127.0.0.1 - - [01/Jul/2024 16:30:45] "POST /emails/find HTTP/1.1" 200 -
+2024-07-01 16:38:40,385 - DEBUG - Using selector: KqueueSelector
+2024-07-01 16:38:41,225 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 16:38:42,610 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 16:38:42,873 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 16:38:43,987 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 16:38:45,057 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 16:38:45,481 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 16:38:45,485 - INFO - 127.0.0.1 - - [01/Jul/2024 16:38:45] "POST /emails/find HTTP/1.1" 200 -
+2024-07-01 16:40:34,659 - DEBUG - Using selector: KqueueSelector
+2024-07-01 16:40:35,952 - DEBUG - Contact page found: https://www.tandwgreenhouse.com/contact
+2024-07-01 16:40:37,456 - INFO - Emails extracted from https://www.tandwgreenhouse.com: ['info@tandwgreenhouse.com']
+2024-07-01 16:40:37,725 - INFO - Emails extracted from https://www.tandwgreenhouse.com/contact: ['info@tandwgreenhouse.com', 'info@tandwgreenhouse.com']
+2024-07-01 16:40:38,800 - DEBUG - Contact page found: http://www.youldenvalley.net/contact
+2024-07-01 16:40:39,891 - INFO - Emails extracted from http://www.youldenvalley.net: []
+2024-07-01 16:40:40,310 - INFO - Emails extracted from http://www.youldenvalley.net/contact: ['thomasyoulden@hotmail.comMobile']
+2024-07-01 16:40:40,312 - INFO - 127.0.0.1 - - [01/Jul/2024 16:40:40] "POST /emails/find HTTP/1.1" 200 -
+2024-07-01 16:50:00,981 - INFO -  * Detected change in '/Users/winwin/Documents/GitHub/scraper_e/backend/scraper/app/emails/routes.py', reloading
+2024-07-01 16:50:02,044 - INFO -  * Restarting with stat
+2024-07-01 16:50:03,378 - WARNING -  * Debugger is active!
+2024-07-01 16:50:03,409 - INFO -  * Debugger PIN: 133-337-925
+2024-07-01 16:50:26,951 - INFO -  * Detected change in '/Users/winwin/Documents/GitHub/scraper_e/backend/scraper/app/emails/routes.py', reloading
+2024-07-01 16:50:27,012 - INFO -  * Restarting with stat
+2024-07-01 16:50:27,454 - WARNING -  * Debugger is active!
+2024-07-01 16:50:27,461 - INFO -  * Debugger PIN: 133-337-925
