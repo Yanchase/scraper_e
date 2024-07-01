@@ -17,7 +17,7 @@ user_agent = [
 ]
 
 
-def scrape_data(url):
+def scrape_data_yellowpage(url):
     headers = {"User-Agent": random.choice(user_agent)}
     response = requests.get(url, headers=headers, timeout=30)
     if response.status_code == 200:
@@ -73,11 +73,11 @@ def scrape():
     try:
         for pageNum in range(start_page, end_page + 1):  # Adjustable page range
             url = f"https://www.yellowpages.com.au/search/listings?clue={keyword}&locationClue=All+States&pageNumber={pageNum}"
-            data = scrape_data(url)
+            data = scrape_data_yellowpage(url)
             if data:
                 if len(data) > 3:
                     data = data[:-3]
-                    write_to_csv(file_name, data, is_first_page)
+                    write_to_csv_yp(file_name, data, is_first_page)
                     is_first_page = False
             else:
                 print(f"No data found to write to CSV for page {pageNum}.")
@@ -93,7 +93,7 @@ def scrape():
         return jsonify({"error": str(e)}), 500
 
 
-def write_to_csv(file_name, data, is_first_page):
+def write_to_csv_yp(file_name, data, is_first_page):
     mode = "w" if is_first_page else "a"
     with open(file_name, mode=mode, newline="", encoding="utf-8") as file:
         writer = csv.writer(file)
@@ -102,3 +102,81 @@ def write_to_csv(file_name, data, is_first_page):
         for item in data:
             if item[3] != "N/A":  # Skip rows where website is "N/A"
                 writer.writerow(item)
+
+
+def scrape_data(url):
+    headers = {"User-Agent": random.choice(user_agent)}
+    response = requests.get(url, headers=headers, timeout=30)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, "html.parser")
+        listings = soup.find_all(
+            "div", class_="row"
+        )  # Adjust class as per the HTML structure
+        data = []
+        for listing in listings:
+            paragraph = (
+                listing.find("p").get_text(strip=True) if listing.find("p") else "N/A"
+            )
+            link_element = listing.find("a", href=True)
+            title = "N/A"  # Default value if no suitable link is found
+            link = "N/A"  # Default value if no suitable link is found
+
+            if link_element:
+                link = link_element["href"]
+                text = link_element.text.strip()
+                if "Website" in text:
+                    title = text.replace("Visit the ", "").replace(" Website", "")
+
+            data.append([paragraph, title, link])
+        return data
+    else:
+        print(f"Failed to retrieve data, status code: {response.status_code}")
+        return []
+
+
+def write_to_csv(
+    file_name, data, headers=["Introduction", "Title", "Website"], is_first_page=True
+):
+    mode = "w" if is_first_page else "a"
+    with open(file_name, mode, newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        if is_first_page:
+            writer.writerow(headers)
+        for item in data:
+            writer.writerow(item)
+
+
+def remove_na_rows(file_path):
+    cleaned_data = []
+    with open(file_path, mode="r", newline="", encoding="utf-8") as file:
+        reader = csv.reader(file)
+        headers = next(reader)
+        cleaned_data.append(headers)
+        for row in reader:
+            if "N/A" not in row:
+                cleaned_data.append(row)
+    with open(file_path, mode="w", newline="", encoding="utf-8") as file:
+        writer = csv.writer(file)
+        writer.writerows(cleaned_data)
+
+
+@bp.route("/monnit", methods=["GET"])
+def main():
+    file_name = "partner_link.csv"
+    url = "https://www.monnit.com/partner/current-partners/"
+    try:
+        data = scrape_data(url)
+        print("Scraped Data:", data)
+        if data:
+            write_to_csv(file_name, data)
+            remove_na_rows(file_name)
+            file_path = os.path.join(os.getcwd(), file_name)
+            if os.path.exists(file_path):
+                return send_file(file_path, as_attachment=True)
+            else:
+                return jsonify({"error": "File not found after creation attempt"}), 404
+        else:
+            return jsonify({"error": "No data found to write to CSV"}), 404
+    except Exception as e:
+        traceback.print_exc()
+        return jsonify({"error": str(e)}), 500
