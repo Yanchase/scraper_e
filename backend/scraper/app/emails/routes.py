@@ -6,7 +6,8 @@ import asyncio
 from bs4 import BeautifulSoup
 import aiohttp
 import logging
-from io import BytesIO, StringIO, TextIOWrapper
+from io import BytesIO, StringIO
+from stream_handler import DynamicStreamHandler
 
 # Initialize the blueprint
 bp = Blueprint("emails", __name__)
@@ -27,6 +28,13 @@ def setup_logging():
 
 
 setup_logging()
+
+stream_handler = DynamicStreamHandler()
+logger = logging.getLogger("emails")
+logger.setLevel(logging.DEBUG)
+formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s - %(message)s")
+stream_handler.setFormatter(formatter)
+logger.addHandler(stream_handler)
 # User agents list to mimic browser requests
 user_agent = [
     "Mozilla/5.0 (compatible; MSIE 8.0; Windows NT 6.0; Trident/4.0; Acoo Browser 1.98.744; .NET CLR 3.5.30729)",
@@ -57,21 +65,21 @@ async def find_contact_page(session, base_url, retries=3, timeout=5):
                     url, headers=headers, timeout=timeout
                 ) as response:
                     if response.status == 200:
-                        logging.debug(f"Contact page found: {url}")
+                        logger.debug(f"Contact page found: {url}")
                         return url
             except Exception as e:
-                logging.error(f"Error accessing {url}: {str(e)}")
+                logger.error(f"Error accessing {url}: {str(e)}")
                 if attempt < retries - 1:
-                    logging.warning(f"Retrying {url} - Attempt {attempt + 1}")
+                    logger.warning(f"Retrying {url} - Attempt {attempt + 1}")
                     await asyncio.sleep(2**attempt)
-    logging.info(f"No contact page found for {base_url}")
+    logger.info(f"No contact page found for {base_url}")
     return None
 
 
 async def extract_emails(session, url, timeout=5):
     headers = {"User-Agent": random.choice(user_agent)}
     if not url:
-        logging.info(f"No URL provided for email extraction")
+        logger.info(f"No URL provided for email extraction")
         return ""
     try:
         async with session.get(url, headers=headers, timeout=timeout) as response:
@@ -81,10 +89,10 @@ async def extract_emails(session, url, timeout=5):
                 emails = re.findall(
                     r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+", soup.text
                 )
-                logging.info(f"Emails extracted from {url}: {emails}")
+                logger.info(f"Emails extracted from {url}: {emails}")
                 return "; ".join(set(emails))
     except Exception as e:
-        logging.error(f"Error extracting emails from {url}: {str(e)}")
+        logger.error(f"Error extracting emails from {url}: {str(e)}")
     return ""
 
 
@@ -129,6 +137,14 @@ async def process_emails():
         attachment_filename="processed_emails.csv",
         mimetype="text/csv",
     )
+
+
+@bp.route("/stream_logs")
+def stream_logs():
+    level_name = request.args.get("level", "INFO").upper()
+    level = getattr(logging, level_name, logging.INFO)
+    queue = stream_handler.register_subscriber(level)
+    return stream_handler.stream_logs(queue)
 
 
 # Ensure the blueprint route registration is correct

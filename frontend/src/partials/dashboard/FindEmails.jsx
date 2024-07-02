@@ -1,9 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 function FindEmails() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [logs, setLogs] = useState([]);
+  useEffect(() => {
+    const eventSource = new EventSource("/emails/stream_logs");
+    console.log("EventSource:", eventSource);
+    eventSource.onmessage = (event) => {
+      console.log(event);
+      console.log("New log:", event.data);
+      setLogs((prevLogs) => [...prevLogs, event.data]);
+    };
+
+    return () => {
+      eventSource.close();
+    };
+  }, []);
 
   // Handle file selection
   const handleFileChange = (event) => {
@@ -45,6 +59,7 @@ function FindEmails() {
         setLoading(false);
       })
       .catch((error) => console.error("Error downloading the file:", error));
+    setLoading(false);
   };
 
   return (
@@ -54,16 +69,16 @@ function FindEmails() {
           Upload File to extract emails
         </h2>
 
-        <div class="font-[sans-serif] max-w-md mx-auto">
-          <label class="text-base text-gray-500 font-semibold mb-2 block">
+        <div className="font-[sans-serif] max-w-md mx-auto">
+          <label className="text-base text-gray-500 font-semibold mb-2 block">
             Upload file
           </label>
           <input
             type="file"
-            class="w-full text-gray-400 font-semibold text-sm bg-white border file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-gray-100 file:hover:bg-gray-200 file:text-gray-500 rounded"
+            className="w-full text-gray-400 font-semibold text-sm bg-white border file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-gray-100 file:hover:bg-gray-200 file:text-gray-500 rounded"
             onChange={handleFileChange}
           />
-          <p class="text-xs text-gray-400 mt-2">
+          <p className="text-xs text-gray-400 mt-2">
             Only CSV files are supported.
           </p>
         </div>
@@ -123,8 +138,20 @@ function FindEmails() {
           </button>
         </div>
         {loading && (
-          <div className="text-center text-sm text-gray-600 dark:text-gray-400 pt-2">
-            Please wait, your download is in progress...
+          <div className="flex flex-col items-center justify-center p-4">
+            <div className="text-center text-sm text-gray-600 dark:text-gray-400">
+              Please wait, your download is in progress...
+            </div>
+            <div className="overflow-auto h-32 w-full p-2 bg-gray-100 dark:bg-gray-700">
+              {logs.map((log, index) => (
+                <p
+                  key={index}
+                  className="text-gray-700 dark:text-gray-300 text-xs"
+                >
+                  {log}
+                </p>
+              ))}
+            </div>
           </div>
         )}
       </header>
