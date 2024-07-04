@@ -12,6 +12,8 @@ export default defineConfig({
   },
   plugins: [react()],
   server: {
+    host: true,
+    port: process.env.PORT || 3000,
     proxy: {
       "/scrape": {
         target: "http://127.0.0.1:5000",
@@ -24,7 +26,6 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/emails/, "/emails"),
       },
     },
-    port: process.env.PORT || 3000,
   },
   resolve: {
     alias: [
