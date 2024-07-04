@@ -24,6 +24,7 @@ export default defineConfig({
         rewrite: (path) => path.replace(/^\/emails/, "/emails"),
       },
     },
+    port: process.env.PORT || 3000,
   },
   resolve: {
     alias: [
