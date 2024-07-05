@@ -1,16 +1,26 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 function FindEmails() {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [logs, setLogs] = useState([]);
+  const logsEndRef = useRef(null);
+
+  useEffect(() => {
+    try {
+      if (logsEndRef.current) {
+        logsEndRef.current.scrollIntoView({ behavior: "smooth" });
+      }
+    } catch (error) {
+      console.error("Failed to scroll to the bottom of the log view:", error);
+    }
+  }, [logs]);
+
   useEffect(() => {
     const eventSource = new EventSource("/emails/stream_logs");
     console.log("EventSource:", eventSource);
     eventSource.onmessage = (event) => {
-      console.log(event);
-      console.log("New log:", event.data);
       setLogs((prevLogs) => [...prevLogs, event.data]);
     };
 
@@ -75,6 +85,7 @@ function FindEmails() {
           </label>
           <input
             type="file"
+            accept=".csv"
             className="w-full text-gray-400 font-semibold text-sm bg-white border file:cursor-pointer cursor-pointer file:border-0 file:py-3 file:px-4 file:mr-4 file:bg-gray-100 file:hover:bg-gray-200 file:text-gray-500 rounded"
             onChange={handleFileChange}
           />
@@ -83,14 +94,13 @@ function FindEmails() {
           </p>
         </div>
 
-        <div className="flex justify-end pt-10 pb-2">
+        <div className="flex justify-end items-end pb-2">
           <button
             className={`inline-flex items-center gap-2 rounded border border-indigo-600 bg-indigo-600 px-6 py-2 text-white hover:bg-transparent hover:text-indigo-600 focus:outline-none focus:ring active:text-indigo-500 ${
               loading ? "opacity-50 cursor-not-allowed" : ""
             }`}
             onClick={handleUpload}
             disabled={loading}
-            style={{ position: "absolute", bottom: "1rem", right: "1rem" }}
           >
             {loading ? (
               <>
@@ -138,7 +148,7 @@ function FindEmails() {
           </button>
         </div>
         {loading && (
-          <div className="flex flex-col items-center justify-center p-4">
+          <div className="flex flex-col items-center justify-center pb-4">
             <div className="text-center text-sm text-gray-600 dark:text-gray-400">
               Please wait, your download is in progress...
             </div>
@@ -151,6 +161,7 @@ function FindEmails() {
                   {log}
                 </p>
               ))}
+              <div ref={logsEndRef}></div>
             </div>
           </div>
         )}
